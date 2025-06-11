@@ -4,7 +4,9 @@ import './App.css';
 const App = () => {
   const [tickets, setTickets] = useState(null);
   const [loading, setLoading] = useState(true);
+
 const baseUrl = import.meta.env.API_BASE_URL;
+
   const getStatus = async () => {
     try {
       const res = await fetch(`${baseUrl}/api/raffle-status?userId=123`);
@@ -19,7 +21,7 @@ const baseUrl = import.meta.env.API_BASE_URL;
 
   const enterRaffle = async () => {
     try {
-      const res = await fetch('https://citycanvas-backendapi.onrender.com/api/raffle-entry', {
+      const res = await fetch(`${baseUrl}/api/raffle-enter`, {
         method: 'POST'
       });
       const data = await res.json();
