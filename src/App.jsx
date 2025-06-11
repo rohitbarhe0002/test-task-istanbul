@@ -4,9 +4,7 @@ import './App.css';
 const App = () => {
   const [tickets, setTickets] = useState(null);
   const [loading, setLoading] = useState(true);
-
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
-
   const getStatus = async () => {
     try {
       const res = await fetch(`${baseUrl}/api/raffle-status?userId=123`);
@@ -21,7 +19,7 @@ const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
   const enterRaffle = async () => {
     try {
-      const res = await fetch(`${baseUrl}/api/raffle-enter`, {
+      const res = await fetch(`${baseUrl}/api/raffle-entry`, {
         method: 'POST'
       });
       const data = await res.json();
