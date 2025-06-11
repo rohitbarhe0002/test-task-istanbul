@@ -5,7 +5,7 @@ const App = () => {
   const [tickets, setTickets] = useState(null);
   const [loading, setLoading] = useState(true);
 
-const baseUrl = import.meta.env.API_BASE_URL;
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
   const getStatus = async () => {
     try {
